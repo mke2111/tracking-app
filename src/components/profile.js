@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import getData from '../helpers/profileApi';
-import UserMeasurements from './UserMeasurements';
+import UserMeasurements from './userMeasurement';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -26,8 +26,6 @@ class Profile extends React.Component {
             key={data[i].id}
             id={data[i].id}
             memory={[data[i].memory]}
-            // intelligence={[data[i].intelligence]}
-            // social={[data[i].social]}
           />,
         );
       }
