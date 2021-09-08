@@ -33,7 +33,7 @@ class App extends React.Component {
     if (uid && uid !== '') {
       handleUserUpdate(uid);
       return (
-        <main>
+        <main className="flex flex-col justify-end ">
           <Nav />
           <Switch>
             <Route exact path="/" component={Details} />

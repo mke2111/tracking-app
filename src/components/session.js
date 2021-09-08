@@ -39,13 +39,13 @@ class Session extends React.Component {
     const { formType } = this.state;
     return (
       <div >
-        <div >
-          <h1 className="text-3xl">{formType}</h1>
+        <div className="mt-24 text-center" >
+          <h1 className="text-3xl mb-8">{formType}</h1>
           <div id="error" />
-          <input type="text" id="username" name="name" className="outline-white" />
+          <input type="text" id="username" name="name" className="outline-blue rounded-lg border-2 border-blue mb-8" />
           <div>
-            <button type="button" onClick={this.setUser} className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-indigo-600">Submit</button>
-            <button type="button" onClick={this.setFormType} className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-green-600" >{formType === 'login' ? 'signup' : 'login'}</button>
+            <button type="button" onClick={this.setUser} className="inline-flex justify-center py-1 px-3 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-indigo-600 mr-4">Submit</button>
+            <button type="button" onClick={this.setFormType} className="inline-flex justify-center py-1 px-3 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-green-600" >{formType === 'login' ? 'Sign Up' : 'Log In'}</button>
           </div>
         </div>
       </div>
