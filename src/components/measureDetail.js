@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
 const MeasureDetail = ({ id, name }) => (
-  <a className="" href={`/show/${id}`} >
-    <h1>{name}</h1>
+  <a className="bg-blue-300 rounded-lg py-3 text-white shadow-lg m-3 shadow-xl" href={`/show/${id}`} >
+    <h1 className="bg-blue-400 rounded p-0">{name}</h1>
   </a>
 );
 

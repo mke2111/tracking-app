@@ -21,6 +21,7 @@ class Details extends React.Component {
           <MeasureDetail
             key={measures[i].id}
             id={measures[i].id}
+            className="w-36 bg-green-500"
             name={measures[i].name}
           />,
         );
@@ -37,14 +38,22 @@ class Details extends React.Component {
     };
 
     return (
-      <div className="pt-36" id="details">
-        <h3 className="text-3xl text-blue-400">Add New Measure</h3>
+      <div className="pt-12 text-center" id="details">
+        <h3 className="text-lg text-blue-400 mb-2">Add New Measure</h3>
         <div id="create">
-          <input type="text" id="name" name="name" placeholder="name" />
-          <button type="button" onClick={handleNewMeasure}>SUBMIT</button>
+          <input type="text" className="outline-blue rounded-lg border-2 border-blue mb-8" id="name" name="name" placeholder="name" />
+          <button
+            type="button"
+            onClick={handleNewMeasure}
+            className="inline-flex justify-center px-1 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-indigo-600 ml-1"
+          >
+            SUBMIT
+          </button>
         </div>
-        <h1>Pick</h1>
-        {getList()}
+        <h3 className="text-2xl text-blue-400">Measures</h3>
+        <div className="grid grid-cols-2 auto-rows-max">
+          {getList()}
+        </div>
       </div>
     );
   }
