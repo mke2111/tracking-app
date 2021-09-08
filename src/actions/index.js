@@ -1,4 +1,4 @@
-export const UPDATE_GAMES = 'UPDATE_GAMES';
+export const UPDATE_MEASURES = 'UPDATE_MEASURES';
 
 export const UPDATE_USER = 'UPDATE_USER';
 
@@ -7,7 +7,7 @@ export const updateUser = data => ({
   data,
 });
 
-export const updateGames = data => ({
-  type: UPDATE_GAMES,
+export const updateMeasures = data => ({
+  type: UPDATE_MEASURES,
   data,
 });
