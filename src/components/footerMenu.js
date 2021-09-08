@@ -9,7 +9,7 @@ const FooterMenu = ({ cookies }) => (
       <a href="/" className={currentLocation === '' ? 'blue' : 'gray'} aria-label="games">Home</a>
       <a href="/Profile" className={currentLocation === 'Profile' ? 'blue' : 'gray'} aria-label="profile">Profile</a>
     </div>
-    <div className="bg-red-700 w-36 px-1">
+    <div className="bg-red-500 w-36 px-1">
       <button
         id="logout-btn"
         type="submit"
