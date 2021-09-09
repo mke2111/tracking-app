@@ -45,9 +45,9 @@ class Details extends React.Component {
           <button
             type="button"
             onClick={handleNewMeasure}
-            className="inline-flex justify-center px-1 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-indigo-600 ml-1"
+            className="inline-flex justify-center px-1 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 ml-1"
           >
-            SUBMIT
+            Submit
           </button>
         </div>
         <h3 className="text-2xl text-blue-400">Measures</h3>
