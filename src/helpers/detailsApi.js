@@ -14,7 +14,7 @@ const pushData = async measure => {
     },
     body: JSON.stringify({
       name: measure[0],
-      // memory: measure[1],
+      memory: measure[1],
     }),
   }).then(response => response.json());
   return data;

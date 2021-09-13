@@ -21,41 +21,43 @@ class Show extends React.Component {
   }
 
   async measure() {
-    this.firstDate = new Date(document.getElementById('first-date').value);
-    this.secondDate = new Date(document.getElementById('second-date').value);
-    this.hours = Math.floor((Math.abs(this.firstDate - this.secondDate) / 1000) / 3600) % 24;
+    this.hours = new Date(document.getElementById('time').value);
+    // this.hours = Math.floor(Math.abs(this.time * 1.23)) % 24;
+    // console.log(this.hours);
     this.data = await API.pushData([id, this.hours]);
+    console.log(this.data);
     if (this.data.id) {
       window.location.href = `/measure/${this.data.id}`;
     } else {
       document.getElementById('score').innerHTML += 'Invalid';
+      console.log(this.data.id);
     }
   }
 
   render() {
     const { data } = this.state;
     return (
-      <div id="game-container" className="pt-36">
-        <div id="originl-game-container" >
-          <img src={data.link} alt={data.name} />
-          <h1>{data.name}</h1>
-          <h2>what you get from playing this game (per hour):</h2>
+      <div className="text-center shadow w-5/6 bg-gray-50 rounded mx-auto my-6 h-full">
+        <div>
+          <h3 className="text-2xl text-green-500 py-8"><small className="text-sm text-black">Workout type: </small>{data.name}</h3>
           <div className="scores">
             <div>
-              <h2>Priority</h2>
-              <h3 className={this.scoreColor(data.memory)}>{data.memory}</h3>
+              <h3 className={this.scoreColor(data.memory)}>00{data.memory}</h3>
             </div>
           </div>
         </div>
-        <div id="dates-conainer">
+        <div className="py-6">
           <div id="dates">
-            <h1>Calculate (hours)</h1>
-            {/* <h2>From:</h2> */}
-            <input id="first-date" type="datetime-local" placeholder="2021-08-27T00:00" min="2021-08-27T19:30" max="2021-08-27T19:30" />
-            <h2>To:</h2>
-            <input id="second-date" type="datetime-local" placeholder="2021-08-27T00:00" min="2021-08-27T19:30" max="2021-08-27T19:30" />
+            <h3 className="pb-4">Add workout time in hours</h3>
+            <input id="time" type="number" className="outline-blue rounded-lg border-2 border-blue mb-8" placeholder="Enter number of hours"/>
           </div>
-          <button type="submit" onClick={this.measure}>Submit</button>
+          <button
+            type="submit"
+            onClick={this.measure}
+            className="inline-flex justify-center px-1 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 ml-1"
+          >
+            Submit
+          </button>
           <div id="score"> </div>
         </div>
       </div>

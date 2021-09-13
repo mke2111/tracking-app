@@ -13,6 +13,7 @@ class Profile extends React.Component {
   async componentDidMount() {
     const { uid } = this.props;
     this.data = await getData(uid);
+    console.log(this.data)
     this.setState({ data: this.data });
   }
 
