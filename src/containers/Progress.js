@@ -53,7 +53,7 @@ const Progress = () => {
         )}
         {!token && <Redirect to="/" />}
         <TitleName>{user.user.username}</TitleName>
-        <ProgressTitle>Latest Session</ProgressTitle>
+        <ProgressTitle>Latest Session ({ progress.total_time })</ProgressTitle>
         { progress.latest.title
         && (
         <ProgressCard
@@ -70,7 +70,7 @@ const Progress = () => {
           time={progress.longest.total_time}
         />
         )}
-        <ProgressTitle>Top 5 Most Studied tasks</ProgressTitle>
+        <ProgressTitle>Top 5 tasks</ProgressTitle>
         { progress.top && progress.top.map(task => (
           <ProgressCard
             key={task.id}
