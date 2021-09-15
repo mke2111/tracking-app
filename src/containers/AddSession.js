@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import {
@@ -13,17 +12,6 @@ import autoLogin from '../api/autoLogin';
 import { setSessionData } from '../api/setData';
 import ErrorMessage from '../components/ErrorMessage';
 import LoaderSpinner from '../components/LoaderSpinner';
-import FormButton from '../components/FormButton';
-
-const TitleInput = styled.input`
-width: 100%;
-border-radius: 0;
-border: none;
-outline: none;
-padding: 1rem 2rem;`;
-
-const TitleForm = styled.form`
-display: flex`;
 
 const AddSession = () => {
   const token = localStorage.getItem('token');
@@ -69,16 +57,26 @@ const AddSession = () => {
       {errors.title && (
         <ErrorMessage message={errors.title.message} />
       )}
-      <TitleForm onSubmit={handleSubmit(setSession)}>
-        <TitleInput
+      <form className="flex shadow rounded w-3/4 mx-auto my-8" onSubmit={handleSubmit(setSession)}>
+        <input
           onChange={setTitle}
           name="title"
           type="text"
-          placeholder="Session title here..."
+          className="m-3 outline-blue rounded-lg border-2 border-blue"
+          placeholder="Add title"
           ref={register({ required: 'Field required' })}
         />
-        <FormButton type="submit">Add</FormButton>
-      </TitleForm>
+        <button className="w-36 rounded-md text-white bg-green-600" type="submit">Add</button>
+      </form>
+      <div className="w-4/6 mx-auto mt-36 text-center">
+        <p>
+          Add an activity that you want to track the time you spend doing. It could be Reading, Running, Coding, writing, Netflix N Chill, Baking, Surfing. <br/>YOU NAME IT!
+        </p>
+
+        <small className="text-green">
+          Copyright 2023
+        </small>
+      </div>
     </>
   );
 };

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { resetProgress, setActiveTab } from '../actions';
@@ -7,13 +6,7 @@ import autoLogin from '../api/autoLogin';
 import { fetchLongestSession, fetchLatestSession, fetchTop5Tasks } from '../api/fetchData';
 import ErrorMessage from '../components/ErrorMessage';
 import LoaderSpinner from '../components/LoaderSpinner';
-import TitleName from '../components/TitleName';
 import ProgressCard from '../components/ProgressCard';
-
-const ProgressTitle = styled.h4`
-const text-align: left;
-font-weight: 300;
-padding: 1rem;`;
 
 const Progress = () => {
   const dispatch = useDispatch();
@@ -22,7 +15,7 @@ const Progress = () => {
 
   useEffect(() => {
     dispatch(autoLogin());
-    dispatch(setActiveTab('Your Progress'));
+    dispatch(setActiveTab('Profile'));
     dispatch(resetProgress());
   }, []);
 
@@ -52,33 +45,36 @@ const Progress = () => {
         <ErrorMessage message={errorText} />
         )}
         {!token && <Redirect to="/" />}
-        <TitleName>{user.user.username}</TitleName>
-        <ProgressTitle>Latest Session ({ progress.total_time })</ProgressTitle>
-        { progress.latest.title
-        && (
-        <ProgressCard
-          name={progress.latest.title}
-          date={new Date(progress.latest.created_at).toLocaleDateString()}
-          time={progress.latest.total_time}
-        />
-        )}
-        <ProgressTitle>Longest Session</ProgressTitle>
-        {progress.longest.title && (
-        <ProgressCard
-          name={progress.longest.title}
-          date={new Date(progress.longest.created_at).toLocaleDateString()}
-          time={progress.longest.total_time}
-        />
-        )}
-        <ProgressTitle>Top 5 tasks</ProgressTitle>
-        { progress.top && progress.top.map(task => (
-          <ProgressCard
-            key={task.id}
-            name={task.name}
-            date={new Date(task.created_at).toLocaleDateString()}
-            time={task.time}
+        <h2 className="text-center pt-6 text-xl">{user.user.username}'s progress</h2>
+        <section className="shadow mx-auto w-5/6 my-4">
+          <div className="text-center text-red-300">Latest Session</div>
+          { progress.latest.title
+          && (
+          <ProgressCard className=""
+            name={progress.latest.title}
+            date={new Date(progress.latest.created_at).toLocaleDateString()}
           />
-        ))}
+          )}
+        </section>
+        <section className="shadow mx-auto w-5/6 my-4">
+          <div className="text-center text-red-300">Longest Session</div>
+          {progress.longest.title && (
+          <ProgressCard
+            name={progress.longest.title}
+            date={new Date(progress.longest.created_at).toLocaleDateString()}
+          />
+          )}
+        </section>
+        <section className="shadow mx-auto w-5/6 my-4">
+          <div className="text-center text-red-300">Top Tasks</div>
+          { progress.top && progress.top.map(task => (
+            <ProgressCard
+              key={task.id}
+              name={task.name}
+              date={new Date(task.created_at).toLocaleDateString()}
+            />
+          ))}
+        </section>
       </div>
     </>
   );

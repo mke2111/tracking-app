@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { resetTaskData, setActiveTab } from '../actions';
@@ -7,12 +6,7 @@ import autoLogin from '../api/autoLogin';
 import { fetchUserData } from '../api/fetchData';
 import ErrorMessage from '../components/ErrorMessage';
 import LoaderSpinner from '../components/LoaderSpinner';
-import TitleName from '../components/TitleName';
 import SessionCard from '../components/SessionCard';
-
-const StyledLink = styled(Link)`
-text-decoration: none;
-color: inherit;`;
 
 const UserDetail = () => {
   const dispatch = useDispatch();
@@ -20,7 +14,7 @@ const UserDetail = () => {
   const { user } = useSelector(state => state);
 
   useEffect(() => {
-    dispatch(setActiveTab('Check Sessions'));
+    dispatch(setActiveTab('Add Tasks to Sessions'));
     dispatch(autoLogin());
     dispatch(fetchUserData());
   }, []);
@@ -42,20 +36,23 @@ const UserDetail = () => {
   const errorText = `Error: ${user.error}`;
   return (
     <>
-      <div>
+      <div className="">
         {user.error && (
         <ErrorMessage message={errorText} />
         )}
         {!token && <Redirect to="/" />}
-        <TitleName>{user.user.username}</TitleName>
         { user.user.sessions
         && user.user.sessions.map(session => (
-          <StyledLink key={session.id} onClick={resetTaskStore} to={`sessionDetail/${session.id}`}>
+          <Link
+            className="  p-3 my-3 cursor-pointer "
+            key={session.id}
+            onClick={resetTaskStore}
+            to={`sessionDetail/${session.id}`}
+          >
             <SessionCard
-              date={new Date(session.created_at).toLocaleDateString()}
               title={session.title}
             />
-          </StyledLink>
+          </Link>
         ))}
       </div>
     </>

@@ -1,38 +1,15 @@
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-
-const CardContainer = styled.div`
-display: flex;
-width: 100%;
-justify-content: space-between;
-align-items: center;
-background-color: white;
-padding: 1rem;
-margin: 0.1rem 0`;
-
-const TitleName = styled.h4`
-color: #8090a0;
-font-weight: 300`;
-
-const TimeText = styled.h2`
-font-weight: bold;
-font-size: 2rem;
-margin-right: 0.4rem`;
-
-const TimeContainer = styled.div`
-display: flex;
-align-items: center;`;
 
 const Card = props => {
   const { title, time } = props;
   return (
-    <CardContainer>
-      <TitleName>{title}</TitleName>
-      <TimeContainer>
-        <TimeText>{time}</TimeText>
+    <div className="flex justify-between bg-white shadow my-2 w-3/4 mx-auto p-4">
+      <h4>{title}</h4>
+      <div className="flex">
+        <h3>{time}</h3>
         <span>hr(s)</span>
-      </TimeContainer>
-    </CardContainer>
+      </div>
+    </div>
   );
 };
 Card.propTypes = {

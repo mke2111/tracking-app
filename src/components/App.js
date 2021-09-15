@@ -8,7 +8,7 @@ import NavFooter from './NavFooter';
 import TopBar from '../containers/TopBar';
 import Progress from '../containers/Progress';
 
-const Routes = () => (
+const App = () => (
   <>
     <BrowserRouter>
       <TopBar />
@@ -25,4 +25,4 @@ const Routes = () => (
   </>
 );
 
-export default Routes;
+export default App;

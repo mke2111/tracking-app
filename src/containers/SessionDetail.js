@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
-import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import {
@@ -16,35 +15,6 @@ import { fetchSessionData } from '../api/fetchData';
 import ErrorMessage from '../components/ErrorMessage';
 import LoaderSpinner from '../components/LoaderSpinner';
 import Card from '../components/Card';
-import TitleName from '../components/TitleName';
-import DateSubtitle from '../components/DateSubtitle';
-import FormButton from '../components/FormButton';
-
-const InputField = styled.input`
-border: none;
-border-bottom: 3px solid #8ed3f1;
-border-radius: 0;
-width: 100%;
-outline: none;
-background-color: white;
-margin-bottom: 1.2rem;
-padding: 0.5rem;`;
-
-const TaskForm = styled.form`
-display: flex;
-margin-top: 2rem;
-background-color: white;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 1rem;`;
-
-const TasksContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-flex-wrap: wrap;
-background-color: #f3f4f6`;
 
 const SessionDetail = props => {
   const { match } = props;
@@ -97,34 +67,44 @@ const SessionDetail = props => {
       <ErrorMessage message={errorText} />
       )}
       {!token && <Redirect to="/" />}
-      <TitleName>{session.session.title}</TitleName>
-      <DateSubtitle>{new Date(session.session.created_at).toLocaleDateString()}</DateSubtitle>
-      <TaskForm onSubmit={handleSubmit(setTask)}>
+      <h2 className="text-center text-2xl mt-2">{session.session.title}</h2>
+      <h4 className="text-center">{new Date(session.session.created_at).toLocaleDateString()}</h4>
+      <form
+        onSubmit={handleSubmit(setTask)}
+        className="text-center flex flex-col items-center shadow w-4/6 mx-auto py-3"
+      >
         {errors.title && (
         <ErrorMessage message={errors.title.message} />
         )}
-        <InputField
+        <input
           onChange={setName}
           name="title"
           type="text"
-          placeholder="What task did you do today?..."
+          placeholder="Add task"
+          className="m-3 outline-blue rounded-lg border-2 border-blue"
           ref={register({ required: 'Field required' })}
         />
         {errors.time && (
         <ErrorMessage message={errors.time.message} />
         )}
-        <InputField
+        <input
           onChange={setTime}
           name="time"
           type="number"
           step="0.1"
           min="0"
-          placeholder="How long(in hours) did you spend on it?..."
+          placeholder="Hours spent"
+          className="m-3 outline-blue rounded-lg border-2 border-blue"
           ref={register({ required: 'Field required' })}
         />
-        <FormButton type="submit">Add</FormButton>
-      </TaskForm>
-      <TasksContainer>
+        <button
+          type="submit"
+          className="py-1 px-3 w-24 rounded-md text-white bg-green-600"
+        >
+          Add Task
+        </button>
+      </form>
+      <div className="flex flex-col justify-between flex-wrap">
         {session.session.tasks
       && session.session.tasks.map(task => (
         <Card
@@ -140,7 +120,7 @@ const SessionDetail = props => {
             time={task.time}
           />
         ))}
-      </TasksContainer>
+      </div>
     </>
   );
 };
