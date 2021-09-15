@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
@@ -12,29 +11,6 @@ import { setUserData } from '../api/setData';
 import ErrorMessage from '../components/ErrorMessage';
 import LoaderSpinner from '../components/LoaderSpinner';
 import autoLogin from '../api/autoLogin';
-import FormButton from '../components/FormButton';
-
-const InputField = styled.input`
-border: 3px solid white;
-border-radius: 0;
-outline: none;
-background-color: white;
-margin-bottom: 1.2rem;
-padding: 0.5rem;`;
-
-const SignForm = styled.form`
-display: flex;
-height: 50vh;
-flex-direction: column;
-justify-content: center;
-align-items: center;`;
-
-const SignUpMessage = styled.p`
-margin-top: 2rem;`;
-
-const SignUpLink = styled(Link)`
-text-decoration: none;
-color: #62b5e5;`;
 
 const SignUser = props => {
   const token = localStorage.getItem('token');
@@ -79,13 +55,14 @@ const SignUser = props => {
       {user.error && (
       <ErrorMessage message={errorText} />
       )}
-      <SignForm onSubmit={handleSubmit(setUser)}>
+      <form className="flex flex-col shadow-xl justify-center w-5/6 mx-auto mt-36 my-6 items-center" onSubmit={handleSubmit(setUser)}>
         {errors.username && (
         <ErrorMessage message={errors.username.message} />
         )}
-        <InputField
+        <input
           name="username"
           type="text"
+          className="m-3 outline-blue rounded-lg border-2 border-blue"
           onChange={setCredentialName}
           placeholder="Username"
           ref={register({ required: 'Field required' })}
@@ -93,11 +70,12 @@ const SignUser = props => {
         {errors.password && (
         <ErrorMessage message={errors.password.message} />
         )}
-        <InputField
+        <input
           name="password"
           type="password"
           onChange={setCredentialPass}
           placeholder="Password"
+          className="m-3 outline-blue rounded-lg border-2 border-blue"
           ref={register({
             required: 'Field required',
             minLength: {
@@ -106,14 +84,24 @@ const SignUser = props => {
             },
           })}
         />
-        <FormButton type="submit">{buttonText}</FormButton>
+        <button
+          type="submit"
+          className="py-1 px-3 w-24 rounded-md text-white bg-green-600 mb-5"
+        >
+          {buttonText}
+        </button>
         {buttonText === 'Log In' && (
-        <SignUpMessage>
-          If you need an account. Click here
-          <SignUpLink to="/signup"> Sign Up </SignUpLink>
-        </SignUpMessage>
+        <p>
+            Click here to 
+            <Link
+              to="/signup"
+              className="text-blue-400"
+            >
+               Sign Up
+            </Link>
+        </p>
         ) }
-      </SignForm>
+      </form>
 
       { token && <Redirect to="/session" />}
     </>
