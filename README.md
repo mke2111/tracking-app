@@ -8,9 +8,11 @@
 > This is the frontend app that connects to the [Backend app](https://github.com/mke2111/tracking-app-api) hosted on Heroku
 
 <div align='center' class='d-flex'>
-  <img  title='wave' alt='screenshot' src='./one.png'>
-  <img  title='wave' alt='screenshot' src='./three.png'>
-  <img  title='wave' alt='screenshot' src='./two.png'>
+  <span align="">
+    <img  title='wave' alt='screenshot' src='./one.png'>
+    <img  title='wave' alt='screenshot' src='./three.png'>
+    <img  title='wave' alt='screenshot' src='./two.png'>
+  </span>
 </div>
 
 The application features includes:
