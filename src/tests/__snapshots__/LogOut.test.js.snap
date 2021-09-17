@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogOut renders correctly 1`] = `
+<div
+  className="bg-red-500 p-3 cursor-pointer"
+  onClick={[Function]}
+  to="/"
+>
+  <small>
+    Log Out
+  </small>
+</div>
+`;

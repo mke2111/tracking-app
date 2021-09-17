@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add Session renders correctly 1`] = `
+Array [
+  <form
+    className="flex shadow rounded w-3/4 mx-auto my-8"
+    onSubmit={[Function]}
+  >
+    <input
+      className="m-3 outline-blue rounded-lg border-2 border-blue"
+      name="title"
+      onChange={[Function]}
+      placeholder="Add title"
+      type="text"
+    />
+    <button
+      className="w-36 rounded-md text-white bg-green-600"
+      type="submit"
+    >
+      Add
+    </button>
+  </form>,
+  <div
+    className="w-4/6 mx-auto mt-36 text-center"
+  >
+    <p>
+      Add an activity that you want to track the time you spend doing. It could be Reading, Running, Coding, writing, Netflix N Chill, Baking, Surfing.
+       
+      <br />
+      YOU NAME IT!
+    </p>
+    <small
+      className="text-green"
+    >
+      Copyright 2023
+    </small>
+  </div>,
+]
+`;

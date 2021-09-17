@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopBar renders correctly 1`] = `
+<header
+  className="bg-blue-500 text-white text-center h-12 py-1 flex justify-between"
+>
+  <a
+    href="https://github.com/mke2111/tracking-app"
+    rel="noreferrer"
+    target="_blank"
+  >
+    <img
+      alt="Github"
+      className="w-8 h-8 ml-3 cursor-pointer"
+      src="github.png"
+    />
+  </a>
+  <h3
+    className="pt-2"
+  >
+    Test
+  </h3>
+  <h3
+    className="pt-2 invisible"
+  >
+    Nothing
+  </h3>
+</header>
+`;
