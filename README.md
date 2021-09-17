@@ -1,44 +1,74 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Tracking App
 
-## Available Scripts
+> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), along with the redux template.
 
-In the project directory, you can run:
+## About The Project
 
-### `yarn start`
+> In this project, I developed a frontend web application (tracking app), used to track time spent on any given task for a given activity.
+> This is the frontend app that connects to the [Backend app](https://github.com/mke2111/tracking-app-api) hosted on Heroku
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<p align='center' class='d-flex'>
+    <span align="">
+    <img  title='wave' alt='screenshot' src='./calcu.png'>
+  </span>
+</p>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The application features includes:
 
-### `yarn test`
+- Create new activities/sessions.
+- Create new tasks and allocate the time spent on the task.
+- Track a users perfomance based on their sessions ans tasks.
+- Show the user their latest and longest activities.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Live Version
 
-### `yarn build`
+To try the live demo [click here](https://flag-398ec8.netlify.app)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Presentation
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Built With
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project was built using these technologies.
 
-### `yarn eject`
+- JavaScript
+- React/Redux
+- HTML/CSS3
+- TailwindCSS
+- Netlify ( For deployment)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Installation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> Make sure Node.js is running on your local machine
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To use this app locally, this is what you need to:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [Download](https://github.com/mke2111/tracking-app.git) or clone this repo:
 
-## Learn More
+  - Clone with HTTPS in the terminal.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ```
+    git clone https://github.com/mke2111/tracking-app.git
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  ```
+
+- Then `cd tracking-app` into the downloaded folder and run `npm install` or `yarn install`
+- then, run `npm run start` or `yarn start`
+
+- Test the app with `yarn test --watchAll`
+
+## Author
+
+👤 **Roy Mukuye**
+
+- GitHub: [@mke2111](https://github.com/mke2111)
+- Twitter: [@Roymkenya](https://twitter.com/Roymkenya)
+- LinkedIn: [Roy Mukuye](https://www.linkedin.com/in/roy-mukuye-42b07b1b4)
+
+## Acknowledgements
+
+- [Microverse](https://www.microverse.org/)
+- [Facebook - React](https://github.com/facebook/create-react-app)
+
+## 📝 License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
