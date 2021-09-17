@@ -11,7 +11,7 @@ import ProgressCard from '../components/ProgressCard';
 const Progress = () => {
   const dispatch = useDispatch();
   const token = localStorage.getItem('token');
-  const { user, progress } = useSelector(state => state);
+  const { user, progress } = useSelector((state) => state);
 
   useEffect(() => {
     dispatch(autoLogin());
@@ -45,12 +45,16 @@ const Progress = () => {
         <ErrorMessage message={errorText} />
         )}
         {!token && <Redirect to="/" />}
-        <h2 className="text-center pt-6 text-xl">{user.user.username}'s progress</h2>
+        <h2 className="text-center pt-6 text-xl">
+          {user.user.username}
+          's progress
+        </h2>
         <section className="shadow mx-auto w-5/6 my-4">
           <div className="text-center text-red-300">Latest Session</div>
           { progress.latest.title
           && (
-          <ProgressCard className=""
+          <ProgressCard
+            className=""
             name={progress.latest.title}
             date={new Date(progress.latest.created_at).toLocaleDateString()}
           />
@@ -67,7 +71,7 @@ const Progress = () => {
         </section>
         <section className="shadow mx-auto w-5/6 my-4">
           <div className="text-center text-red-300">Top Tasks</div>
-          { progress.top && progress.top.map(task => (
+          { progress.top && progress.top.map((task) => (
             <ProgressCard
               key={task.id}
               name={task.name}

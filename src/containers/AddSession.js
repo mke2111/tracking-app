@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,11 +16,11 @@ import LoaderSpinner from '../components/LoaderSpinner';
 
 const AddSession = () => {
   const token = localStorage.getItem('token');
-  const { user, session } = useSelector(state => state);
+  const { user, session } = useSelector((state) => state);
   const dispatch = useDispatch();
   const { handleSubmit, register, errors } = useForm();
 
-  const setTitle = e => {
+  const setTitle = (e) => {
     const input = e.target.value;
     dispatch(setSessionTitle(input));
   };
@@ -70,7 +71,10 @@ const AddSession = () => {
       </form>
       <div className="w-4/6 mx-auto mt-36 text-center">
         <p>
-          Add an activity that you want to track the time you spend doing. It could be Reading, Running, Coding, writing, Netflix N Chill, Baking, Surfing. <br/>YOU NAME IT!
+          Add an activity that you want to track the time you spend doing. It could be Reading, Running, Coding, writing, Netflix N Chill, Baking, Surfing.
+          {' '}
+          <br />
+          YOU NAME IT!
         </p>
 
         <small className="text-green">

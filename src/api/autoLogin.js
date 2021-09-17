@@ -1,6 +1,6 @@
 import { setDataSuccess } from '../actions';
 
-const autoLogin = () => dispatch => {
+const autoLogin = () => (dispatch) => {
   const token = localStorage.getItem('token');
   const url = 'https://mke2111-1.herokuapp.com/auto_login';
   if (token) {
@@ -9,8 +9,8 @@ const autoLogin = () => dispatch => {
         Authorization: `Bearer ${token}`,
       },
     })
-      .then(resp => resp.json())
-      .then(data => {
+      .then((resp) => resp.json())
+      .then((data) => {
         dispatch(setDataSuccess(data));
       });
   }

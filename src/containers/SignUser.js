@@ -12,19 +12,19 @@ import ErrorMessage from '../components/ErrorMessage';
 import LoaderSpinner from '../components/LoaderSpinner';
 import autoLogin from '../api/autoLogin';
 
-const SignUser = props => {
+const SignUser = (props) => {
   const token = localStorage.getItem('token');
   const { buttonText } = props;
   const dispatch = useDispatch();
-  const { user } = useSelector(state => state);
+  const { user } = useSelector((state) => state);
   const { handleSubmit, register, errors } = useForm();
 
-  const setCredentialName = e => {
+  const setCredentialName = (e) => {
     const input = e.target.value;
     dispatch(setCredentialUsername(input));
   };
 
-  const setCredentialPass = e => {
+  const setCredentialPass = (e) => {
     const input = e.target.value;
     dispatch(setCredentialPassword(input));
   };
@@ -92,13 +92,13 @@ const SignUser = props => {
         </button>
         {buttonText === 'Log In' && (
         <p>
-            Click here to 
-            <Link
-              to="/signup"
-              className="text-blue-400"
-            >
-               Sign Up
-            </Link>
+          Click here to
+          <Link
+            to="/signup"
+            className="text-blue-400"
+          >
+            Sign Up
+          </Link>
         </p>
         ) }
       </form>

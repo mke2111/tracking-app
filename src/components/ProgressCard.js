@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const ProgressCard = props => {
+const ProgressCard = (props) => {
   const { date, name } = props;
   return (
     <div className="flex justify-between items-center m-3">

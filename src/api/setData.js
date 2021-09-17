@@ -6,7 +6,7 @@ import {
 } from '../actions';
 import store from '../reducers/store';
 
-export const setUserData = signAction => dispatch => {
+export const setUserData = (signAction) => (dispatch) => {
   const { username, password } = store.getState().credentials;
   let apiUrl = '';
   switch (signAction) {
@@ -33,8 +33,8 @@ export const setUserData = signAction => dispatch => {
   };
   dispatch(setDataPending());
   fetch(apiUrl, config)
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
       if (data.errors || data.failure) {
         const errorMessage = data.errors ? data.errors : data.failure;
         throw (errorMessage);
@@ -43,14 +43,14 @@ export const setUserData = signAction => dispatch => {
       localStorage.setItem('token', data.jwt);
       dispatch(setDataSuccess(data.user));
     })
-    .catch(error => {
+    .catch((error) => {
       dispatch(setDataError(error));
     });
 
   dispatch(resetCredentials());
 };
 
-export const setSessionData = () => dispatch => {
+export const setSessionData = () => (dispatch) => {
   const { title } = store.getState().sessionTitle;
   const token = localStorage.getItem('token');
 
@@ -69,8 +69,8 @@ export const setSessionData = () => dispatch => {
   };
   dispatch(setSessionDataPending());
   fetch(apiUrl, config)
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
       if (data.error || data.failure) {
         const errorMessage = data.error ? data.error : data.failure;
         throw (errorMessage);
@@ -78,12 +78,12 @@ export const setSessionData = () => dispatch => {
       dispatch(setSessionDataSuccess(data));
       dispatch(setSessionRedirect(true));
     })
-    .catch(error => {
+    .catch((error) => {
       dispatch(setSessionDataError(error));
     });
 };
 
-export const setTaskData = () => dispatch => {
+export const setTaskData = () => (dispatch) => {
   const token = localStorage.getItem('token');
 
   const { id } = store.getState().session.session;
@@ -105,15 +105,15 @@ export const setTaskData = () => dispatch => {
   };
   dispatch(setTaskDataPending());
   fetch(apiUrl, config)
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
       if (data.error || data.failure) {
         const errorMessage = data.error ? data.error : data.failure;
         throw (errorMessage);
       }
       dispatch(setTaskDataSuccess(data));
     })
-    .catch(error => {
+    .catch((error) => {
       dispatch(setTaskDataError(error));
     });
 };

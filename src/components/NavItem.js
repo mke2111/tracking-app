@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const NavItem = props => {
+const NavItem = (props) => {
   const { legend, path } = props;
   return (
     <Link className="m-auto pl-3" to={path}>

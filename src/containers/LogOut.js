@@ -11,8 +11,9 @@ const LogOut = () => {
     <div
       className="bg-red-500 p-3 cursor-pointer"
       onClick={handleLogOut}
-      to="/">
-        <small>Log Out</small>
+      to="/"
+    >
+      <small>Log Out</small>
     </div>
   );
 };

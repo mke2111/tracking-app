@@ -16,14 +16,14 @@ import ErrorMessage from '../components/ErrorMessage';
 import LoaderSpinner from '../components/LoaderSpinner';
 import Card from '../components/Card';
 
-const SessionDetail = props => {
+const SessionDetail = (props) => {
   const { match } = props;
   const token = localStorage.getItem('token');
-  const { session, task } = useSelector(state => state);
+  const { session, task } = useSelector((state) => state);
   const dispatch = useDispatch();
   const { handleSubmit, register, errors } = useForm();
 
-  const setName = e => {
+  const setName = (e) => {
     const input = e.target.value;
     dispatch(setTaskName(input));
   };
@@ -32,7 +32,7 @@ const SessionDetail = props => {
     dispatch(fetchSessionID(match.params.id));
   };
 
-  const setTime = e => {
+  const setTime = (e) => {
     const input = e.target.value;
     dispatch(setTaskTime(input));
   };
@@ -106,14 +106,14 @@ const SessionDetail = props => {
       </form>
       <div className="flex flex-col justify-between flex-wrap">
         {session.session.tasks
-      && session.session.tasks.map(task => (
+      && session.session.tasks.map((task) => (
         <Card
           key={task.id}
           title={task.name}
           time={task.time}
         />
       ))}
-        {task.task && task.task.map(task => (
+        {task.task && task.task.map((task) => (
           <Card
             key={task.id}
             title={task.name}

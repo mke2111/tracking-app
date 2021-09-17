@@ -8,11 +8,11 @@ justify-content: center;
 margin: 1rem;`;
 
 const ErrorText = styled.span`
-color: ${props => props.textColor};
+color: ${(props) => props.textColor};
 font-size: 1.1rem;
 font-weight: 700;`;
 
-const ErrorMessage = props => {
+const ErrorMessage = (props) => {
   const { message, color } = props;
   return (
     <ErrorContainer>

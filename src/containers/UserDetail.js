@@ -11,7 +11,7 @@ import SessionCard from '../components/SessionCard';
 const UserDetail = () => {
   const dispatch = useDispatch();
   const token = localStorage.getItem('token');
-  const { user } = useSelector(state => state);
+  const { user } = useSelector((state) => state);
 
   useEffect(() => {
     dispatch(setActiveTab('Add Tasks to Sessions'));
@@ -42,7 +42,7 @@ const UserDetail = () => {
         )}
         {!token && <Redirect to="/" />}
         { user.user.sessions
-        && user.user.sessions.map(session => (
+        && user.user.sessions.map((session) => (
           <Link
             className="  p-3 my-3 cursor-pointer "
             key={session.id}
