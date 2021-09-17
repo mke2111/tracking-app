@@ -9,9 +9,9 @@
 
 <div align='center' class='d-flex'>
   <span align="">
-    <img  title='wave' alt='screenshot' src='./one.png'>
-    <img  title='wave' alt='screenshot' src='./three.png'>
-    <img  title='wave' alt='screenshot' src='./two.png'>
+    <img  title='wave' alt='screenshot' src='./two.png' style="width: 30%;">
+    <img  title='wave' alt='screenshot' src='./one.png' style="width: 30%;">
+    <img  title='wave' alt='screenshot' src='./three.png' style="width: 30%;">
   </span>
 </div>
 
