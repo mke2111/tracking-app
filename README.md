@@ -7,6 +7,8 @@
 > In this project, I developed a frontend web application (tracking app), used to track time spent on any given task for a given activity.
 > This is the frontend app that connects to the [Backend app](https://github.com/mke2111/tracking-app-api) hosted on Heroku
 
+## Screenshots
+
 <div align='center' class='d-flex'>
   <span align="">
     <img  title='wave' alt='screenshot' src='./two.png' style="width: 30%;">
