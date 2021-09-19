@@ -26,7 +26,7 @@ The application features includes:
 
 ## Live Version
 
-[Tracking App](https://mke2111-1.netlify.app/session)
+[Tracking App](https://mke2111-1.netlify.app)
 
 ## Presentation
 
