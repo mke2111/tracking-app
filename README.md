@@ -28,8 +28,6 @@ The application features includes:
 
 [Tracking App](https://mke2111-1.netlify.app)
 
-## Presentation
-
 ### Built With
 
 This project was built using these technologies.
