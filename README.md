@@ -68,8 +68,7 @@ To use this app locally, this is what you need to:
 
 ## Acknowledgements
 
-- [Microverse](https://www.microverse.org/)
-- [Facebook - React](https://github.com/facebook/create-react-app)
+Design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) - [Bodytrack.it - An iOs app - Branding, UX and UI](https://www.behance.net/gallery/13271423/Bodytrackit-An-iOs-app-Branding-UX-and-UI)
 
 ## 📝 License
 
