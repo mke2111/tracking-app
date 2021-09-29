@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUser renders correctly 1`] = `
+<form
+  className="flex flex-col shadow-xl justify-center w-5/6 mx-auto mt-36 my-6 items-center"
+  onSubmit={[Function]}
+>
+  <input
+    className="m-3 outline-blue rounded-lg border-2 border-blue"
+    name="username"
+    onChange={[Function]}
+    placeholder="Username"
+    type="text"
+  />
+  <input
+    className="m-3 outline-blue rounded-lg border-2 border-blue"
+    name="password"
+    onChange={[Function]}
+    placeholder="Password"
+    type="password"
+  />
+  <button
+    className="py-1 px-3 w-24 rounded-md text-white bg-green-600 mb-5"
+    type="submit"
+  >
+    Log In
+  </button>
+  <p>
+    Click here to
+    <a
+      className="text-blue-400"
+      href="/signup"
+      onClick={[Function]}
+    >
+      Sign Up
+    </a>
+  </p>
+</form>
+`;
